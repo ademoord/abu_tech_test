@@ -21,6 +21,7 @@ This portal website will work properly only if you fulfill the dependencies that
 - Discuss
 - Purchase
 - Portal
+-------------------------------------------------------------------
 Here are the list of endpoints and their screenshots in this portal:
 - /my/contacts --> to shows all of the listed vendors
 ![image](https://github.com/ademoord/abu_tech_test/assets/69139708/64ea2eca-0501-42a2-b0ff-92ca4bb526c9)
@@ -29,3 +30,17 @@ Here are the list of endpoints and their screenshots in this portal:
 - /contact_request_form --> to create new vendor
 ![image](https://github.com/ademoord/abu_tech_test/assets/69139708/89d2da32-87bd-4b7d-8608-344a93412763)
 
+# Kwitansi Models
+The models to printout the desired kwitansi is placed in the AIES Menu beside the dashboard. The button that refers to the action_print is named "Print Kwitansi"
+
+# Tech Stacks
+- Python
+- JavaScript
+- XML
+- CSS
+- PostgreSQL
+
+# Supports
+Feel free to reach me at 6282230007021 if you need any support!
+
+Copyrights ademoord (c) 2024
