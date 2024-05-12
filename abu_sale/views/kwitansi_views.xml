@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_abu_kwitansi_form" model="ir.ui.view">
+        <field name="name">abu.kwitansi.form</field>
+        <field name="model">abu.kwitansi</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_print_kwitansi" type="object" string="Print Kwitansi" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="invoice_id" domain="[('move_type', '=', 'out_invoice')]"/>
+                        <field name="date"/>
+                        <field name="printing_time"/>
+                        <field name="nis"/>
+                        <field name="student_name"/>
+                        <field name="class_name"/>
+                        <field name="terbilang"/>
+                        <field name="grand_total"/>
+                        <notebook>
+                            <page string="List Biaya">
+                                <group>
+                                    <field name="kwitansi_line_ids" mode="tree" nolabel="1" colspan="13">
+                                        <tree string="List Biaya" editable="bottom" create="1">
+                                            <field name="no"/>
+                                            <field name="notes"/>
+                                            <field name="price_total"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_abu_kwitansi_tree" model="ir.ui.view">
+        <field name="name">abu.kwitansi.tree</field>
+        <field name="model">abu.kwitansi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="invoice_id"/>
+                <field name="date"/>
+                <field name="printing_time"/>
+                <field name="nis"/>
+                <field name="student_name"/>
+                <field name="class_name"/>
+                <field name="terbilang"/>
+                <field name="grand_total"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_abu_kwitansi" model="ir.actions.act_window">
+        <field name="name">Kwitansi</field>
+        <field name="res_model">abu.kwitansi</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('abu_sale.view_abu_kwitansi_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('abu_sale.view_abu_kwitansi_form')}),
+        ]"/>
+    </record>
+
+    <menuitem id="menu_abu_kwitansi" name="Kwitansi" parent="abu_sale.menu_aies_root"/>
+    <menuitem id="menu_abu_kwitansi_list" name="Kwitansi" parent="menu_abu_kwitansi" action="action_abu_kwitansi"/>
+</odoo>
+

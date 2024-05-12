@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_abu_website_vendor_abu_website_vendor,abu_website_vendor.abu_website_vendor,model_abu_website_vendor_abu_website_vendor,base.group_user,1,1,1,1

@@ -1,0 +1,36 @@
+
+# Byte-compiled / optimized Python files
+*.pyc
+__pycache__/
+
+# Odoo specific
+*.py[co]
+*.bak
+*~
+.idea/
+.vscode/
+
+# Database
+*.sql
+*.dump
+
+# Logs and temporary files
+*.log
+*.pid
+*.sock
+*.swp
+*.swo
+
+# Ignore built files
+*.egg
+*.egg-info/
+dist/
+build/
+bin/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/

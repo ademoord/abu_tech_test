@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_abu_kwitansi,Kwitansi,model_abu_kwitansi,,1,1,1,1
+access_abu_kwitansi_line,Kwitansi Line,model_abu_kwitansi_line,,1,1,1,1

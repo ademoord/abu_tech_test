@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="report_abu_kwitansi">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <!-- Header Section -->
+                        <div style="text-align: left; margin-bottom: 20px; border-bottom: 2px solid black; padding-bottom: 10px;">
+                            <img t-if="doc.company_id.logo" t-att-src="'data:image/png;base64,%s' % doc.company_id.logo" style="max-height: 100px;"/>
+                            <h2 t-field="doc.company_id.name" style="font-size: 18pt; margin-top: 10px;"/>
+                            <h4 t-field="doc.company_id.street" style="font-size: 12pt; margin-top: 5px;"/>
+                            <h4><strong>BUKTI PEMBAYARAN SISWA</strong></h4>
+                        </div>
+                        
+                        <!-- Body Section -->
+                        <div class="body">
+                            <table class="table" style="width: 100%; border-collapse: collapse;" border="1">
+                                <tr>
+                                    <td>No Trans</td>
+                                    <td>:</td>
+                                    <td><span t-field="doc.invoice_id.name"/></td>
+                                    <td>NIS</td>
+                                    <td>:</td>
+                                    <td><span t-field="doc.nis"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal</td>
+                                    <td>:</td>
+                                    <td><span t-field="doc.date"/></td>
+                                    <td>Nama Siswa</td>
+                                    <td>:</td>
+                                    <td><span t-field="doc.student_name"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Jam Cetak</td>
+                                    <td>:</td>
+                                    <td><span t-field="doc.printing_time"/></td>
+                                    <td>Kelas</td>
+                                    <td>:</td>
+                                    <td><span t-field="doc.class_name"/></td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Kwitansi Lines -->
+                            <table class="table" style="width: 100%; border-collapse: collapse;" border="1">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;">No</th>
+                                        <th style="text-align: center;">Keterangan Pembayaran</th>
+                                        <th style="text-align: center;">Jumlah (Rp)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doc.kwitansi_line_ids" t-as="line">
+                                        <tr>
+                                            <td style="text-align: center;"><span t-field="line.no"/></td>
+                                            <td style="text-align: center;"><span t-field="line.notes"/></td>
+                                            <td style="text-align: center;"><span t-field="line.price_total"/></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            
+                            <!-- Additional Info -->
+                            <div style="margin-top: 20px;">
+                                <p style="text-align: right;"><strong>Grand Total:</strong> <span t-field="doc.grand_total"/></p>
+                                <p><strong>Terbilang:</strong> <span t-field="doc.terbilang"/></p>
+                                <p><strong>Catatan:</strong></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Footer -->
+                        <div style="text-align: center; margin-top: 20px; border-top: 2px solid black; padding-top: 10px;">
+                            <p style="text-align: right;"><strong>Tanggal:</strong> _________________</p>
+                            <p style="text-align: right;"><strong>Tanda Tangan:</strong></p>
+                            <br/><br/><br/>
+                            <p style="text-align: right;"><strong>_________________</strong></p>
+                            <p style="text-align: right;"><strong>Nama Penandatangan</strong></p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

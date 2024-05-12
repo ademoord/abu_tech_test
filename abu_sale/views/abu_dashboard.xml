@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="action_abu_dashboard" model="ir.actions.client">
+            <field name="name">Dashboard</field>
+            <field name="tag">owl.sales_dashboard</field>
+        </record>
+
+        <menuitem name="AIES" id="menu_aies_root" sequence="10" web_icon="abu_sale,static/description/icon.png">
+            <menuitem name="Dashboard" id="menu_aies_dashboard" sequence="10" action="action_abu_dashboard"/>
+        </menuitem>
+    </data>
+</odoo>
